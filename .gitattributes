@@ -1,0 +1,8 @@
+# Auto detect text files and perform LF normalization
+*            text=auto
+
+# Specific file handling
+*.md         text
+*.php        text diff=php
+*.sh         text
+/Vagrantfile text diff=ruby

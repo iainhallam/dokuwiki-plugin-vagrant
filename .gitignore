@@ -1,0 +1,6 @@
+# Plugin-specific configuration
+/configure_dw-*
+/provision_dw-*
+
+# Vagrant artefacts
+/.vagrant/
