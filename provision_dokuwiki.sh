@@ -139,6 +139,7 @@ $conf['license'] = '0';
 $conf['useacl'] = 1;
 $conf['superuser'] = '@admin';
 $conf['disableactions'] = 'register';
+$conf['allowdebug'] = 1;
 EOF
 	if [[ ! -e "${config_file}" ]] ; then
 		echo "No error from cat command, but DokuWiki isn't configured in ${config_file}"
