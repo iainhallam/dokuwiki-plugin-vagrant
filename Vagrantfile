@@ -45,6 +45,12 @@ Vagrant.configure("2") do |config|
 		shell.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
 	end
 
+	# Fix lack of UTF functions in PHP 7 without XML package
+	# See https://www.dokuwiki.org/requirements
+	config.vm.provision "fix-no-utf", type: "shell" do |shell|
+		shell.inline = "sudo apt-get update ; sudo apt-get install php7.0-xml ; sudo service apache2 restart"
+	end
+
 	# Provisioning
 	config.vm.provision "dokuwiki", type: "shell" do |shell|
 		shell.path = "provision_dokuwiki.sh"
